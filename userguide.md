@@ -1,13 +1,13 @@
 # PrescriptionForecast: Pharmaceutical Demand Planning Platform
 **Target Platform:** Windows / macOS / Linux (Browser-Based Streamlit Application)  
-**Project Deployment URL:** [StreamLit Cloud](https://qi9q5gz3camhcwkogkzjjs.streamlit.app/)  
+**Project Deployment URL:** [StreamLit Cloud](https://gty3gckneu79uedgvfuokd.streamlit.app/)  
 
 ## Project Overview
 PrescriptionForecast is a supervised machine learning web application developed for a retail pharmacy chain. The platform addresses the critical operational challenge of balancing pharmaceutical overstocking costs (and subsequent medicine expiration waste) against the risks of drug stockouts. 
 
 Utilizing historical [daily transactional data](https://www.kaggle.com/datasets/milanzdravkovic/pharma-sales-data) across 8 Anatomical Therapeutic Chemical (ATC) drug classifications, the system trains a supervised Multiple Linear Regression model to forecast future continuous numerical sales demand based on user-selected year and month values.
 
-You can view the live application by clicking on this [link](https://qi9q5gz3camhcwkogkzjjs.streamlit.app/)  
+You can view the live application by clicking on this [link](https://gty3gckneu79uedgvfuokd.streamlit.app/)  
 
 ---
 
@@ -19,13 +19,12 @@ PrescriptionForecast/
 │
 ├── app.py                      # Monolithic Streamlit UI and dashboard layout
 ├── requirements.txt            # Frozen environment package dependency manifest
-├── README.md                   # Evaluator deployment and execution guide (This file)
+├── userguide.md                # Steps to run this app locally
 │
 ├── data/
 │   └── salesdaily.csv          # Raw pre-aggregated historical daily sales dataset
 │
 └── src/
-    ├── __init__.py             # Structural Python package initializer
     ├── preprocessing.py        # Feature reduction and One-Hot encoding pipelines
     └── model_trainer.py        # Train/test split and regression training engines
 
@@ -41,10 +40,13 @@ PrescriptionForecast/
 2. Right-click the file and select `Extract All...`.
 3. Choose a convenient local directory and complete the extraction.
 
-### Step 2: Open Terminal Context
+### Step 2: 
 
 1. Open the Windows Start Menu, search for **PowerShell** and launch it.
 2. Navigate directly into the root directory of your extracted project folder by executing:
+```powershell
+cd [PATH TO EXTRACTED ZIP FOLDER]
+```
 
 ### Step 3a: Verify Python Version
 
@@ -53,7 +55,7 @@ Check the version of Python installed in your system:
 ```powershell
 python --version
 ```
-Ensure that the version of python matches the following:
+Ensure that the version of python matches one of the following:
 | Python Version | Patch Level | Status |
 | :------------- | ----------- | --------: |
 | Python 3.12 | 3.12.10 | ✅ |
@@ -74,11 +76,11 @@ python -m venv .venv
 
 ```
 
-*(When successfully activated, your terminal prompt string will be prepended with `(.venv)`).*
+*(When successfully activated, your terminal prompt string will be prepended with `(venv)`).*
 
 ### Step 4: Install the required packages
 
-Utilize the requirements.txt with pip to resolve all required dependencies
+Utilize requirements.txt with pip to install all required dependencies
 
 ```powershell
 python -m pip install --upgrade pip setuptools wheel
@@ -86,9 +88,9 @@ pip install -r requirements.txt
 
 ```
 
-### Step 5: Execute the Streamlit Web Application
+### Step 5: Start the Streamlit Web Application
 
-Launch the live local rendering server by executing the primary script hook which automatically opens a browser tab:
+Launch the app by executing the following command:
 
 ```powershell
 streamlit run app.py
