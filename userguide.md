@@ -55,11 +55,9 @@ Check the version of Python installed in your system:
 ```powershell
 python --version
 ```
-Ensure that the version of python matches one of the following:
+Ensure that the version of python matches the following:
 | Python Version | Patch Level | Status |
 | :------------- | ----------- | --------: |
-| Python 3.12 | 3.12.10 | ✅ |
-| Python 3.13 | 3.13.14 | ✅ |
 | Python 3.14 | 3.14.6 | ✅ |
 
 ### Step 3b: Activate the Python Virtual Environment
@@ -83,7 +81,7 @@ python -m venv .venv
 Utilize requirements.txt with pip to install all required dependencies
 
 ```powershell
-python -m pip install --upgrade pip setuptools wheel
+pip install setuptools wheel
 pip install -r requirements.txt
 
 ```
